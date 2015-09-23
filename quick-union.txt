@@ -14,9 +14,11 @@ public class AuickUnionUF
   // Chase parent pointers until reach root.
   private int root(int i)
   {
-    while (i !=id[i])
+    while (i !=id[i]){
+      id[i] = id[id[i]]; //Quick-Union Improvements
       i = id[i];
-      return i;
+    }
+    return i;
   }
 
   // Check if p and q have the same root
